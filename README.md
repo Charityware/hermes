@@ -1,39 +1,36 @@
-# React-Crouton
+# Luxo
 
 > A message component for reactjs
 
-[Live Demo](http://xeodou.github.io/react-crouton)
-
 ## Getting Started
 
-Install via [npm](http://npmjs.org/react-crouton)
+Install via [npm](http://npmjs.org/luxo)
 
-```shell
-   npm i react-crouton --save-dev
+```
+   npm i luxo --save
 ```
 
 ## Usage
 
 ```Javascript
-var Crouton = require('react-crouton')
+var Luxo = require('luxo')
 
 var data = {
     id: Date.now(),
     type: 'error',
-    message: 'Hello React-Crouton',
-    autoMiss: true || false,
+    message: 'Hello Luxo!',
+    autoDismiss: true || false,
     onDismiss: listener,
     buttons: [{
         name: 'close',
         listener: function() {
-
         }
     }],
     hidden: false,
     timeout: 2000
 }
 
-<Crouton
+<Luxo
     id={data.id}
     type={data.type}
     message={data.message}
@@ -41,32 +38,32 @@ var data = {
     buttons={data.buttons}
     hidden={data.hidden}
     timeout={data.timeout}
-    autoMiss={data.autoMiss}/>
+    autoDismiss={data.autoDismiss}/>
 
 ```
 
 ## Options
 
-**id** required, every message need an unique id.
+**id** required, every message need an unique id. You can use something like [Chance](https://www.npmjs.com/package/chance) to generate random integers if you so incline
 
 type: `number`
 
-**message** required, the message what you want show.
+**message** required, the type of message that you'll
 
 type: `string` || `array`
 
 example:
 
 ```
-message: 'Hello React-Crouton'
-message: ['Hello', 'React', '-', 'Crouton']
+message: 'Hello React-Luxo'
+message: ['Hello', 'React', '-', 'Luxo']
 ```
 
 **type** required, define what type message you want to define.
 
 type: `string`
 
-**hidden** optional, control this property to show or hidden crouton.
+**hidden** optional, control this property to show or hide a Luxo component.
 
 type: `boolean`, default is `false`
 
@@ -96,15 +93,15 @@ butons: [{
 }]
 ```
 
-**autoMiss** optional, crouton will auto missed if set this propterty, default is true.
+**autoDismiss** optional, Luxo will auto-dismiss if set this propterty, default is true.
 
 type: `boolean`
 
-**timeout** optional, set how long (ms) to auto dismiss the crouton.
+**timeout** optional, set how long (ms) to auto-dismiss the Luxo.
 
 type: `number`, default is `2000` ms (2 seconds)
 
-**onDismiss** optional, crouton will invoke this listener when it dismissed.
+**onDismiss** optional, Luxo will invoke this listener when it dismissed.
 
 type: `function`
 

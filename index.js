@@ -29,7 +29,7 @@ module.exports = React.createClass({
     onDismiss: PropTypes.func,
     hidden: PropTypes.bool,
     timeout: PropTypes.number,
-    autoMiss: PropTypes.bool,
+    autoDismiss: PropTypes.bool,
     message: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.array
@@ -66,9 +66,8 @@ module.exports = React.createClass({
   getDefaultProps: function () {
     return {
       onDismiss: emptyFunction,
-      // 2000 ms
       timeout: 2000,
-      autoMiss: true
+      autoDismiss: true
     };
   },
 
@@ -123,8 +122,8 @@ module.exports = React.createClass({
     if (typeof message === 'string'){
       message = [message];
     }
-    var autoMiss = nextProps.autoMiss ? (buttons ? false : true) : nextProps.autoMiss;
-    if (autoMiss && !nextProps.hidden) {
+    var autoDismiss = nextProps.autoDismiss ? (buttons ? false : true) : nextProps.autoDismiss;
+    if (autoDismiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
       // this.dismiss();
       this.setState({
