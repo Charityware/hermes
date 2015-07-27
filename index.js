@@ -74,7 +74,8 @@ module.exports = React.createClass({
     return {
       hidden: false,
       ttd: null,
-      message: this.props.message
+      message: this.props.message,
+      type: this.props.type
     };
   },
 
