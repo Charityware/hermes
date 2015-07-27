@@ -1,17 +1,17 @@
 {
-  "name": "react-crouton",
+  "name": "hermes",
   "version": "0.2.6",
   "description": "A message component for reactjs.",
   "main": "index.js",
   "keywords": [
     "react-component",
     "message",
-    "crouton",
-    "alert"
+    "alert",
+    "notification"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:xeodou/react-crouton.git"
+    "url": "git@github.com:Charityware/hermes.git"
   },
   "scripts": {
     "test": "./node_modules/.bin/jest",
@@ -24,13 +24,11 @@
     ]
   },
   "peerDependencies": {
-    "react": ">=0.12.x"
+    "react": ">=0.13.x"
   },
-  "author": "xeodou@gmail.com",
+  "author": "engineering@charityware.co",
   "license": "MIT",
   "devDependencies": {
-    "codemirror": "^4.6.0",
-    "eggshell": "^0.1.20",
     "gulp": "^3.8.8",
     "gulp-browserify": "^0.5.0",
     "gulp-connect": "^2.2.0",
