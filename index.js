@@ -3,12 +3,12 @@ var emptyFunction = require('react/lib/emptyFunction');
 var PropTypes = React.PropTypes;
 
 function formatButtons(buttons) {
-  if (typeof buttons === 'string'){
+  if (typeof buttons === 'string') {
     buttons = [buttons];
   }
 
   if (buttons) {
-    buttons = buttons.map(function (button) {
+    buttons = buttons.map(function(button) {
       if (typeof button === 'string') {
         return {
           name: button
@@ -62,7 +62,7 @@ module.exports = React.createClass({
     ])
   },
 
-  getDefaultProps: function () {
+  getDefaultProps: function() {
     return {
       onDismiss: emptyFunction,
       timeout: 3000,
@@ -70,7 +70,7 @@ module.exports = React.createClass({
     };
   },
 
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       hidden: false,
       ttd: null,
@@ -78,7 +78,7 @@ module.exports = React.createClass({
     };
   },
 
-  dismiss: function () {
+  dismiss: function() {
     this.setState({
       hidden: true
     });
@@ -87,7 +87,7 @@ module.exports = React.createClass({
     return this;
   },
 
-  clearTimeout: function () {
+  clearTimeout: function() {
     if (this.state.ttd) {
       clearTimeout(this.state.ttd);
       this.setState({
@@ -97,9 +97,9 @@ module.exports = React.createClass({
     return this;
   },
 
-  handleClick: function (event) {
+  handleClick: function(event) {
     this.dismiss();
-    var item = this.state.buttons.filter(function (button) {
+    var item = this.state.buttons.filter(function(button) {
       return button.name.toLowerCase() === event.target.id;
     })[0];
     if (item && item.listener) {
@@ -111,21 +111,20 @@ module.exports = React.createClass({
     this.changeState(this.props);
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function() {
     this.clearTimeout();
   },
 
-  changeState: function (nextProps) {
+  changeState: function(nextProps) {
     var buttons = formatButtons(nextProps.buttons);
 
     var message = nextProps.message;
-    if (typeof message === 'string'){
+    if (typeof message === 'string') {
       message = [message];
     }
     var autoDismiss = nextProps.autoDismiss ? (buttons ? false : true) : nextProps.autoDismiss;
     if (autoDismiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
-      // this.dismiss();
       this.setState({
         ttd: ttd,
         hidden: nextProps.hidden,
@@ -143,34 +142,37 @@ module.exports = React.createClass({
     }
   },
 
-  componentWillReceiveProps: function (nextProps) {
+  componentWillReceiveProps: function(nextProps) {
     this.changeState(nextProps);
   },
 
-  shouldComponentUpdate: function (nextProps, nextState) {
+  shouldComponentUpdate: function(nextProps, nextState) {
     if (nextProps.id === this.props.id) {
       return !!nextState.hidden;
     }
     return true;
   },
 
-  render: function () {
+  render: function() {
     return React.createElement('div', {
-        className: 'luxo',
-        hidden: this.state.hidden
-      },
+      className: 'luxo',
+      hidden: this.state.hidden
+    },
       React.createElement('div', {
-          className: this.state.type
-        },
-        this.state.message.map(function (msg, i) {
+        className: this.state.type
+      },
+        (this.state.message instanceof Array) ? this.state.message.map(function(msg, i) {
           return React.createElement('div', {
-            key: i
+            key: i,
+            className: 'message'
           }, msg);
-        }),
+        }) : React.createElement('div', {
+          className: 'message'
+        }, this.state.message),
         this.state.buttons ? React.createElement('div', {
-            className: 'buttons'
-          },
-          this.state.buttons.map(function (button, i) {
+          className: 'buttons'
+        },
+          this.state.buttons.map(function(button, i) {
             return React.createElement('button', {
               id: button.name.toLowerCase(),
               key: i,
