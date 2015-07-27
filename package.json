@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Charityware/hermes.git"
+    "url": "git+https://github.com/Charityware/Luxo.git"
   },
   "keywords": [
     "react-component",
@@ -23,7 +23,7 @@
   "author": "Mark Thomas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Charityware/hermes/issues"
+    "url": "https://github.com/Charityware/Luxo/issues"
   },
-  "homepage": "https://github.com/Charityware/hermes#readme"
+  "homepage": "https://github.com/Charityware/Luxo#readme"
 }

@@ -22,8 +22,7 @@ function formatButtons(buttons) {
 
 module.exports = React.createClass({
 
-  displayName: 'react-Hermes',
-
+  displayName: 'react-Luxo',
   propTypes: {
     id: PropTypes.number.isRequired,
     onDismiss: PropTypes.func,
@@ -41,13 +40,13 @@ module.exports = React.createClass({
      * Example:
      *
      * ```
-     *  <Hermes buttons='close'/>
+     *  <Luxo buttons='close'/>
      *  or
-     *  <Hermes buttons=[{name: 'close'}, {name: 'retry'}] />
+     *  <Luxo buttons=[{name: 'close'}, {name: 'retry'}] />
      *  or
-     *  <Hermes buttons=[{name: 'close', listener: somefunction}] />
+     *  <Luxo buttons=[{name: 'close', listener: somefunction}] />
      *  or
-     *  <Hermes buttons=[{name: 'close', className: 'btn close', listener: somefunction}] />
+     *  <Luxo buttons=[{name: 'close', className: 'btn close', listener: somefunction}] />
      * ```
      */
     buttons: PropTypes.oneOfType([
@@ -74,7 +73,8 @@ module.exports = React.createClass({
   getInitialState: function () {
     return {
       hidden: false,
-      ttd: null
+      ttd: null,
+      message: this.props.message
     };
   },
 
@@ -156,7 +156,7 @@ module.exports = React.createClass({
 
   render: function () {
     return React.createElement('div', {
-        className: 'Hermes',
+        className: 'luxo',
         hidden: this.state.hidden
       },
       React.createElement('div', {
