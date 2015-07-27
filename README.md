@@ -44,7 +44,7 @@ var data = {
 
 ## Options
 
-**id** required, every message need an unique id. You can use something like [Chance](https://www.npmjs.com/package/chance) to generate random integers if you so incline
+**id** required, every message need an unique id. You can use something like [Chance](https://www.npmjs.com/package/chance) to generate random integers if you are so inclined
 
 type: `number`
 

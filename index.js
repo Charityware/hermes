@@ -65,7 +65,7 @@ module.exports = React.createClass({
   getDefaultProps: function () {
     return {
       onDismiss: emptyFunction,
-      timeout: 2000,
+      timeout: 3000,
       autoDismiss: true
     };
   },
@@ -163,7 +163,7 @@ module.exports = React.createClass({
           className: this.state.type
         },
         this.state.message.map(function (msg, i) {
-          return React.createElement('span', {
+          return React.createElement('div', {
             key: i
           }, msg);
         }),
