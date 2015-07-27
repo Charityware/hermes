@@ -1,4 +1,9 @@
 # Luxo
+[![NPM](https://nodei.co/npm/luxo.png)](https://www.npmjs.com/package/luxo)
+
+[![npm version](https://badge.fury.io/js/luxo.svg)](https://www.npmjs.com/package/luxo)
+[![](https://img.shields.io/badge/such-badge-brightgreen.svg)](https://charityware.co)
+
 A simple message component for reactjs. Forked from [react-crouton](https://github.com/xeodou/react-crouton).
 
 ## Getting Started
