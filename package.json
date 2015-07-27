@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Charityware/Luxo/issues"
   },
-  "homepage": "https://github.com/Charityware/Luxo#readme"
+  "homepage": "https://github.com/Charityware/Luxo#readme",
+  "dependencies": {
+    "react": "^0.13.3"
+  }
 }
