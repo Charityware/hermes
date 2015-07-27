@@ -1,7 +1,7 @@
 {
-  "name": "hermes",
+  "name": "luxo",
   "version": "0.0.1",
-  "description": "A simple message/notification react component ",
+  "description": "A simple message/notification react component",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
