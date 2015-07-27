@@ -41,9 +41,9 @@ var data = {
     autoDismiss={data.autoDismiss}/>
 ```
 
-## Options
+## Component Options
 
-**id** required, every message need an unique id. You can use something like [Chance](https://www.npmjs.com/package/chance) to generate random integers if you are so inclined
+**`id`** required, every message need an unique id. You can use something like [Chance](https://www.npmjs.com/package/chance) to generate random integers if you are so inclined
 
 type: `number`
 
