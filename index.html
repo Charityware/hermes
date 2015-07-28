@@ -1,22 +1,143 @@
-<!doctype html>
-<html lang="en">
-<head>
- <meta charset='utf-8'/>
-  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Luxo by Charityware</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Luxo</h1>
+      <h2 class="project-tagline">A simple notification component for Reactjs</h2>
+      <a href="https://github.com/Charityware/luxo" class="btn">View on GitHub</a>
+      <a href="https://github.com/Charityware/luxo/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Charityware/luxo/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-  <title>React-Crouton</title>
+    <section class="main-content">
+      <h1>
+<a id="luxo" class="anchor" href="#luxo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Luxo</h1>
 
-  <meta name='keywords' content='react-component, message, crouton, alert'/>
-  <meta name='description' content='A message component for reactjs.'/>
+<p><a href="https://www.npmjs.com/package/luxo"><img src="https://nodei.co/npm/luxo.png" alt="NPM"></a></p>
 
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.6.0/codemirror.min.css">
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.6.0/theme/eclipse.min.css">
-  <link rel="stylesheet" href="style.css">
+<p><a href="https://www.npmjs.com/package/luxo"><img src="https://badge.fury.io/js/luxo.svg" alt="npm version"></a>
+<a href="https://charityware.co"><img src="https://img.shields.io/badge/such-badge-brightgreen.svg" alt=""></a></p>
 
-</head>
-<body>
-    <a href="https://github.com/xeodou/react-crouton"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
-    <div id='crouton-example'></div>
-</body>
-<script src="app.js"></script>
+<p>A simple message component for reactjs. Forked from <a href="https://github.com/xeodou/react-crouton">react-crouton</a>.</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Install via <a href="http://npmjs.org/luxo">npm</a></p>
+
+<pre><code>   npm i luxo --save
+
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-Javascript"><pre><span class="pl-k">var</span> Luxo <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>luxo<span class="pl-pds">'</span></span>)
+
+<span class="pl-k">var</span> data <span class="pl-k">=</span> {
+    id<span class="pl-k">:</span> <span class="pl-c1">Date</span>.now(),
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>,
+    message<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Hello Luxo!<span class="pl-pds">'</span></span>,
+    autoDismiss<span class="pl-k">:</span> <span class="pl-c1">true</span> <span class="pl-k">||</span> <span class="pl-c1">false</span>,
+    onDismiss<span class="pl-k">:</span> listener,
+    buttons<span class="pl-k">:</span> [{
+        name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>close<span class="pl-pds">'</span></span>,
+        <span class="pl-en">listener</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        }
+    }],
+    hidden<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+    timeout<span class="pl-k">:</span> <span class="pl-c1">2000</span>
+}
+
+<span class="pl-k">&lt;</span>Luxo
+    id<span class="pl-k">=</span>{data.<span class="pl-c1">id</span>}
+    type<span class="pl-k">=</span>{data.<span class="pl-c1">type</span>}
+    message<span class="pl-k">=</span>{data.message}
+    onDismiss<span class="pl-k">=</span>{data.onDismiss}
+    buttons<span class="pl-k">=</span>{data.buttons}
+    hidden<span class="pl-k">=</span>{data.hidden}
+    timeout<span class="pl-k">=</span>{data.timeout}
+    autoDismiss<span class="pl-k">=</span>{data.autoDismiss}/<span class="pl-k">&gt;</span></pre></div>
+
+<h2>
+<a id="component-options" class="anchor" href="#component-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Component Options</h2>
+
+<p><strong><code>id</code></strong> required, every message need an unique id. You can use something like <a href="https://www.npmjs.com/package/chance">Chance</a> to generate random integers if you are so inclined</p>
+
+<p>type: <code>number</code></p>
+
+<p><strong><code>message</code></strong> required, the type of message that you'll be sending. You can provide either a single string or array of strings. If you provide multiple strings, each message will get it's own div. This could be useful if you need to provide a series of messages at once but have them display within one notification.</p>
+
+<p>type: <code>string</code> || <code>array</code></p>
+
+<p>example:</p>
+
+<pre><code>message: 'Hello React-Luxo'
+message: ['You did something', 'You did something else!', 'This is fun']
+</code></pre>
+
+<p><strong><code>type</code></strong> required, define what type message you want to create. This will be the <code>className</code> that gets set on a message. You could easily set up some nice nested LESS/SCSS styling that would let you create some custom styling for different message types.</p>
+
+<p>type: <code>string</code></p>
+
+<p><strong><code>hidden</code></strong> optional, control this property to hide or show a Luxo component.</p>
+
+<p>type: <code>boolean</code>, default is <code>false</code></p>
+
+<p><strong><code>autoDismiss</code></strong> optional, Luxo will auto-dismiss if set this proptety; defaults to true.</p>
+
+<p>type: <code>boolean</code></p>
+
+<p><strong><code>timeout</code></strong> optional, set how long (ms) to auto-dismiss the Luxo component.</p>
+
+<p>type: <code>number</code>, default is <code>3000</code> ms (3 seconds)</p>
+
+<p><strong><code>onDismiss</code></strong> optional, Luxo will invoke this listener when it dismissed.</p>
+
+<p>type: <code>function</code></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+
+<h4>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO:</h4>
+
+<ul>
+<li>new API for buttons</li>
+<li>better tests</li>
+<li>provide several css libs to give you an out-of-the-box solution</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Charityware/luxo">Luxo</a> is maintained by <a href="https://github.com/Charityware">Charityware</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48345857-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
 </html>
+
