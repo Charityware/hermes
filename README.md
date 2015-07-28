@@ -26,11 +26,6 @@ var data = {
     message: 'Hello Luxo!',
     autoDismiss: true || false,
     onDismiss: listener,
-    buttons: [{
-        name: 'close',
-        listener: function() {
-        }
-    }],
     hidden: false,
     timeout: 2000
 }
@@ -40,7 +35,6 @@ var data = {
     type={data.type}
     message={data.message}
     onDismiss={data.onDismiss}
-    buttons={data.buttons}
     hidden={data.hidden}
     timeout={data.timeout}
     autoDismiss={data.autoDismiss}/>
