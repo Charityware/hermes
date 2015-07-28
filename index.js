@@ -75,8 +75,7 @@ module.exports = React.createClass({
       hidden: false,
       ttd: null,
       message: this.props.message,
-      type: this.props.type,
-      buttons: this.props.button
+      type: this.props.type
     };
   },
 

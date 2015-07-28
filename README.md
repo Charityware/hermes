@@ -71,32 +71,6 @@ type: `string`
 
 type: `boolean`, default is `false`
 
-**`buttons`** optional, define the buttons that you want show to the user.
-
-type: `string` || `array`
-
-example:
-
-```
-buttons: 'close'
-butons: [{
-    name: 'close'
-}]
-butons: [{
-    name: 'close',
-    listener: function() {
-        console.log('The close button button clicked.')
-    }
-}]
-butons: [{
-    name: 'close',
-    className: 'custom class name',
-    listener: function() {
-        console.log('Another close button button clicked')
-    }
-}]
-```
-
 **`autoDismiss`** optional, Luxo will auto-dismiss if set this proptety; defaults to true.
 
 type: `boolean`
@@ -113,7 +87,7 @@ type: `function`
 
 MIT
 
-
 ####TODO:
+- new API for buttons
 - better tests
 - provide several css libs to give you an out-of-the-box solution
